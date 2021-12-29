@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.2.2/dist/css/splide-core.min.css">
+  
+  
+
+  <style>
+
+    
+
+    .hero{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #142e29;
+    }
+   
+    #app{
+      min-height: 100vh;
+      background-color: #142e29;
+      color: rgb(192, 192, 192);
+    }
+
+    #logo{
+      height: 100%;
+    }
+
+    nav{
+      padding: 1vw;
+      display: flex;
+      justify-content: space-between;
+    }
+
+
+    .nav__logo-wrap{
+      display: inline-block;
+      height: 4.2vw;      
+    }
+
+    
+
+    .hero__title-wrap{
+      text-align: center;
+    }
+
+    .nav__right-wrap{
+      display: flex;
+      align-items: center;
+    }
+
+    .hero_buton{
+      border-radius: 50px;
+      padding: 37px 60px 37px 60px;
+      color: rgb(9, 31, 7);
+      font-weight: 400;
+      background-color: #708840;
+    }
+
+    .mr-small{
+      margin-left: 1vw;
+    }
+
+    .link__divider{
+      height: 2vw;
+      width: .2vw;
+      background-color: red;
+      margin-left: 2vw;
+      margin-right: 2vw;
+    }
+
+    button{
+      color: white;
+      font-size: 1.5vw;
+      background-color: rgb(77, 5, 17);
+      border: none;
+      padding: 1.5vw;
+      border-radius: .4vw;
+      margin-left: 3vw;
+    }
+
+    .trip-img-contain{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      padding: 0px 0px 0px 0px;
+      margin: 0px 0px 0px 0px;
+      background-color: blanchedalmond;
+    }
+
+    .trip-img{
+      width: 33.33vw;
+      height: 100%;
+      object-fit: cover;
+      background-color: rgb(194, 133, 28);
+    }
+   
+
+    .image {
+      width: 300px;
+      height: auto;
+
+    }
+
+    .letter {
+	display: inline-block;
+  opacity: 0;
+}
+
+.tricksword {
+	white-space: nowrap;
+}
+
+.nav-link__contain, .sublink__contain {
+	opacity: 0;
+}
+
+
+.splide__track {
+  overflow: visible;
+}
+
+
+
+.splide *:focus { outline: none; }.letter {
+	display: inline-block;
+  opacity: 0;
+}
+
+.tricksword {
+	white-space: nowrap;
+}
+
+.nav-link__contain, .sublink__contain {
+	opacity: 0;
+}
+
+
+.splide__track {
+  overflow: visible;
+}
+
+
+
+.splide *:focus { outline: none; }
+
+.card{
+  height: 5vw;
+  margin-right: 6vw;
+  background-repeat: no-repeat;
+  opacity: 30%;
+}
+
+
+
+.splide__progress__bar {
+  height: 3px;
+  background: #ccc;
+}
+
+
+
+.stay-wrapper{
+  display: flex;
+  height: 30vw;
+  width: 60vw;
+  margin: auto;
+}
+
+.stay__img{
+  height: 100%;
+  width: 40%;
+  background-image: url('https://images.unsplash.com/photo-1485463598028-44d6c47bf23f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1049&q=80');
+  background-size: cover;
+}
+
+
+
+.stay-title-flex{
+  width: 60%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.stay__title-wrap{
+  margin-left: 8vw;
+  position: relative;
+
+}
+
+.stay-svg{
+  position: absolute;
+  top: 3vw;
+  right: 0;
+  height: 13vw;
+  z-index: 1;
+}
+
+.marquee-wrapper {
+  margin-top: 10vw;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 15vw;
+}
+
+.marquee-track {
+  position: absolute;
+  display: flex;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee-horizontal 10s linear infinite;
+  /* manipulate the speed of the marquee by changing "40s" line above*/
+}
+
+@keyframes marquee-horizontal {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media only screen and (min-width: 992px) {
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+}
+
+.collection-list-wrapper{
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
+
+.stay-type{
+  position: relative;
+  font-size: 7vw;
+  z-index: 99;
+}
+
+.stay__title-span{
+  font-family: 'Times New Roman', Times, serif;
+  margin-left: -5.1vw;
+}
+
+.stay__contain{
+  padding: 5vw;
+}
+
+
+  </style>
+</head>
+<body>
+
+  
+  
+
+  <div id="app">
+
+
+
+    <!------------- Nav Bar ------------------->
+    <nav>
+      <div class="nav__logo-wrap">
+        <img id="logo" src="./assests/stars.png" alt="">
+      </div>
+
+      <div class="nav__right-wrap">
+        <link rel="stylesheet" href="" class="nav__links">buy</link>
+        <div class="link__divider"></div>
+        <link rel="stylesheet" href="" class="nav__links">contact</link>
+        <div class="link__divider"></div>
+        <link rel="stylesheet" href="" class="nav__links">buy</link>
+        <button>hire me</button>
+      </div>
+    </nav>
+
+    <!------------ Hero Section ---------------->
+    <div class="hero">
+      <div class="hero__title-wrap">
+        <h3>MIND YOUR</h3>
+        <h1>HEALTH</h1>
+        <button class="hero_buton">VIEW MORED</button>
+      </div>
+    </div>
+    <section>
+      <div class="trip-img-contain">
+        <img src="https://images.unsplash.com/photo-1558507652-2d9626c4e67a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80" alt="" class="trip-img">
+        <img src="https://images.unsplash.com/photo-1527082395-e939b847da0d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80" alt="" class="trip-img">
+        <img src="https://images.unsplash.com/photo-1618298363483-e31a31f1a1e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80" alt="" class="trip-img">
+      </div>
+      
+      <div class="marquee-wrapper">
+        <div class="marquee-track">
+            <div class="collection-list-wrapper"><img src="./assests/TEEK JOONES.png" class="card" alt=""><img src="./assests/TEEK JOONES.png" class="card" alt=""><img src="./assests/TEEK JOONES.png" class="card" alt=""></div>
+            <div class="collection-list-wrapper"><img src="./assests/TEEK JOONES.png" class="card" alt=""><img src="./assests/TEEK JOONES.png" class="card" alt=""><img src="./assests/TEEK JOONES.png" class="card" alt=""></div>
+            <div class="collection-list-wrapper"><img src="./assests/TEEK JOONES.png" class="card" alt=""><img src="./assests/TEEK JOONES.png" class="card" alt=""><img src="./assests/TEEK JOONES.png" class="card" alt=""><img src="./assests/TEEK JOONES.png" class="card" alt=""></div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!------------ Stay ---------------->
+
+    <section>
+      <div class="stay__contain">
+        <div class="stay-wrapper">
+          <div class="stay__img">
+
+          </div>
+          <div class="stay-title-flex">
+            <div class="stay__title-wrap">
+              <img class="stay-svg" src="./assests/61a6b70dfafd9a54cd75e32e_scribble-5.svg" alt="">
+              <h1 class="stay-type">STAY <span class="stay__title-span">METALLY</span> STRONG</h1>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <section>
+      <div class="container">
+        <div class="splide" id="slider1">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide" data-splide-interval="1000"><div class="card-wrap">Slide 01<div class="card" style="background-image: url(./assests/Saqib\ LH-498.jpg);"></div></div></li>
+              <li class="splide__slide" data-splide-interval="1000">Slide 02<div class="card-wrap">Slide 01<div class="card" style="background-image: url(./assests/Saqib\ LH-498.jpg);"></div></div></li>
+              <li class="splide__slide" data-splide-interval="1000"><div class="card-wrap">Slide 01<div class="card" style="background-image: url(./assests/Saqib\ LH-498.jpg);"></div></div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    
+
+
+    
+
+  </div>
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+  integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+  crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.2.2/dist/js/splide.min.js"></script>
+  <script src="https://unpkg.com/vue@next"></script>
+  
+  <script>
+
+    let app= Vue.createApp({
+      
+    });
+
+    app.mount('#app');
+
+
+    
+    
+  </script>
+
+  <script>
+   
+   function slider1() {
+
+      let splides = $('#slider1');
+      for ( let i = 0, splideLength = splides.length; i < splideLength; i++ ) {
+        new Splide( splides[ i ], {
+        // Desktop on down
+        perPage: 3,
+        perMove: 1,
+        focus: 0, // 0 = left and 'center' = center
+        type: 'loop', // 'loop' or 'slide'
+        gap: '2em', // space between slides
+        arrows: 'slider', // 'slider' or false
+        pagination: 'slider', // 'slider' or false
+        speed : 600, // transition speed in miliseconds
+        dragAngleThreshold: 30, // default is 30
+        autoWidth: false, // for cards with differing widths
+        rewind : false, // go back to beginning when reach end
+        rewindSpeed : 400,
+        waitForTransition : false,
+        updateOnMove : true,
+        trimSpace: false, // true removes empty space from end of list
+        breakpoints: {
+          991: {
+            // Tablet
+            perPage: 2,
+          },
+          767: {
+            // Mobile Landscape
+            perPage: 1,
+          },
+          479: {
+            // Mobile Portrait
+            perPage: 1,
+          }
+        }
+      } ).mount();
+      }
+
+      }
+      slider1();
+
+     
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  
+</body>
+</html>
